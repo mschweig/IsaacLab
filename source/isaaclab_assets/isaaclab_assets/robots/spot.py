@@ -133,7 +133,7 @@ and the output torque (N*m). It is used to interpolate the output torque based o
 
 SPOT_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path=f"{ISAAC_NUCLEUS_DIR}/Robots/BostonDynamics/spot/spot.usd",
+        usd_path=f"{ISAAC_NUCLEUS_DIR}/Robots/BostonDynamics/spot/spot_with_arm.usd",
         activate_contact_sensors=True,
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,
@@ -184,7 +184,7 @@ SPOT_CFG = ArticulationCfg(
 """Configuration for the Boston Dynamics Spot robot w/ Arm."""
 SPOT_ARM_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path=f"{ISAAC_NUCLEUS_DIR}/Robots/BostonDynamics/spot/spot_with_arm.usd",
+        usd_path="/home/manuel/Downloads/spot_with_arm_custom.usd",
         activate_contact_sensors=True,
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,
@@ -207,13 +207,13 @@ SPOT_ARM_CFG = ArticulationCfg(
             "f[rl]_hy": 0.9,  # front hip_y
             "h[rl]_hy": 1.1,  # hind hip_y
             ".*_kn": -1.5,  # all knees
-            "arm0_sh0": 0.1,  # arm shoulder yaw
-            "arm0_sh1": 0.1,  # arm shoulder pitch
-            "arm0_el0": 0.1,  # arm elbow
-            "arm0_el1": 0.1,  # arm elbow
-            "arm0_wr0": 0.1,  # arm wrist
-            "arm0_wr1": 0.1,  # arm wrist
-            "arm0_f1x": 0.1,  # arm finger
+            #"arm0_sh0": 0.0,  # arm shoulder yaw
+            #"arm0_sh1": 0.0,  # arm shoulder pitch
+            #"arm0_el0": 0.0,  # arm elbow
+            #"arm0_el1": 0.0,  # arm elbow
+            #"arm0_wr0": 0.0,  # arm wrist
+            #"arm0_wr1": 0.0,  # arm wrist
+            #"arm0_f1x": 0.0,  # arm finger
         },
         joint_vel={".*": 0.0},
     ),
