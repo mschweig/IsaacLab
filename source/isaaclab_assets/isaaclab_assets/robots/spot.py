@@ -135,7 +135,7 @@ and the output torque (N*m). It is used to interpolate the output torque based o
 """Configuration for the Boston Dynamics Spot robot."""
 SPOT_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path=f"{ISAAC_NUCLEUS_DIR}/Robots/BostonDynamics/spot/spot_with_arm.usd",
+        usd_path=f"{ISAAC_NUCLEUS_DIR}/Robots/BostonDynamics/spot/spot.usd",
         activate_contact_sensors=True,
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,
@@ -185,7 +185,7 @@ SPOT_CFG = ArticulationCfg(
 """Configuration for the Boston Dynamics Spot robot w/ Arm."""
 SPOT_ARM_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path=os.path.join("~/IsaacRobotics/assets", "spot_arm.usd"),
+        usd_path=os.path.expanduser("~/workspaces/IsaacRobotics/assets/spot_arm.usd"),
         activate_contact_sensors=True,
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,
