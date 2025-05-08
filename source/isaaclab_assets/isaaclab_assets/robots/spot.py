@@ -185,7 +185,7 @@ SPOT_CFG = ArticulationCfg(
 """Configuration for the Boston Dynamics Spot robot w/ Arm."""
 SPOT_ARM_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path=os.path.expanduser("~/workspaces/IsaacRobotics/assets/spot_arm.usd"),
+        usd_path=os.path.expanduser("~/workspaces/IsaacRobotics/assets/spot_arm.usd"), #TODO: use nucleus path
         activate_contact_sensors=True,
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,
