@@ -185,7 +185,7 @@ SPOT_CFG = ArticulationCfg(
 """Configuration for the Boston Dynamics Spot robot w/ Arm."""
 SPOT_ARM_CFG = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path=os.path.expanduser("~/workspaces/IsaacRobotics/assets/spot_arm.usd"), #TODO: use nucleus path
+        usd_path=os.path.expanduser("/workspace/IsaacRobotics/assets/spot_arm.usd"), #TODO: use nucleus path
         activate_contact_sensors=True,
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,
@@ -208,9 +208,13 @@ SPOT_ARM_CFG = ArticulationCfg(
             "f[rl]_hy": 0.9,  # front hip_y
             "h[rl]_hy": 1.1,  # hind hip_y
             ".*_kn": -1.5,  # all knees
-            "arm0_sh1": -0.9 * math.pi,
-            "arm0_el0": 0.9 * math.pi
-
+            "arm0_sh1": -3.13,
+            "arm0_el0": 3.13,
+            "arm0_el1": 0,
+            "arm0_sh0": 0,
+            "arm0_wr0": 0, 
+            "arm0_wr1": 0,
+            "arm0_f1x": 0
         },
         joint_vel={".*": 0.0},
     ),
