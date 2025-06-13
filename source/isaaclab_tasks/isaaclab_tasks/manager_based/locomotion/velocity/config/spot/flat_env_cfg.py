@@ -232,8 +232,21 @@ class SpotRewardsCfg:
     # arm position in stow state
     joint_deviation_hip = RewardTermCfg(
         func=spot_mdp.joint_deviation_l1,
-        weight=-0.3,
-        params={"asset_cfg": SceneEntityCfg("robot", joint_names=["arm0_sh1", "arm0_el0", "arm0_el1", "arm0_sh0", "arm0_wr0", "arm0_wr1", "arm0_f1x"])},
+        weight=-5,
+        params={
+            "asset_cfg": SceneEntityCfg(
+                "robot",
+                joint_names=[
+                    "arm0_sh1",
+                    "arm0_el0",
+                    "arm0_el1",
+                    "arm0_sh0",
+                    "arm0_wr0",
+                    "arm0_wr1",
+                    "arm0_f1x",
+                ],
+            )
+        },
     )
 
     # -- penalties
@@ -261,7 +274,21 @@ class SpotRewardsCfg:
     joint_acc = RewardTermCfg(
         func=spot_mdp.joint_acceleration_penalty,
         weight=-1.0e-4,
-        params={"asset_cfg": SceneEntityCfg("robot", joint_names=".*_h[xy]")},
+        params={
+            "asset_cfg": SceneEntityCfg(
+                "robot",
+                joint_names=[
+                    ".*_h[xy]",
+                    "arm0_sh1",
+                    "arm0_el0",
+                    "arm0_el1",
+                    "arm0_sh0",
+                    "arm0_wr0",
+                    "arm0_wr1",
+                    "arm0_f1x",
+                ],
+            )
+        },
     )
     joint_pos = RewardTermCfg(
         func=spot_mdp.joint_position_penalty,
@@ -280,7 +307,21 @@ class SpotRewardsCfg:
     joint_vel = RewardTermCfg(
         func=spot_mdp.joint_velocity_penalty,
         weight=-1.0e-2,
-        params={"asset_cfg": SceneEntityCfg("robot", joint_names=".*_h[xy]")},
+        params={
+            "asset_cfg": SceneEntityCfg(
+                "robot",
+                joint_names=[
+                    ".*_h[xy]",
+                    "arm0_sh1",
+                    "arm0_el0",
+                    "arm0_el1",
+                    "arm0_sh0",
+                    "arm0_wr0",
+                    "arm0_wr1",
+                    "arm0_f1x",
+                ],
+            )
+        },
     )
 
 
